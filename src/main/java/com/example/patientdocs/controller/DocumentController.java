@@ -52,9 +52,18 @@ public class DocumentController {
         if (!ok) {
             return ResponseEntity
                     .status(HttpStatus.NOT_FOUND)
+<<<<<<< HEAD
                     .body("Document with ID " + id + " not found in database");
         }
 
         return ResponseEntity.ok(" Document deleted successfully");
     }
 }
+=======
+                    .body("❗ Document with ID " + id + " not found in database");
+        }
+
+        return ResponseEntity.ok("✔ Document deleted successfully");
+    }
+}
+>>>>>>> b7f32d42be47e012b0e08524d7a74a3d96dea610

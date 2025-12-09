@@ -1,0 +1,20 @@
+# Compiled Java files
+target/
+*.class
+
+# Eclipse / IDE
+*.classpath
+*.project
+*.settings/
+*.idea/
+
+# Spring Boot logs
+logs/
+*.log
+
+# Uploaded PDFs
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
