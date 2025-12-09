@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patient Document Portal</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#eef2f3;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        flex-direction:column;
+    }
+
+    .container{
+        background:#ffffff;
+        padding:25px;
+        width:450px;
+        border-radius:10px;
+        box-shadow:0 0 15px rgba(0,0,0,0.1);
+        text-align:center;
+    }
+
+    input,button{
+        padding:10px;
+        margin:7px;
+        width:90%;
+        border-radius:5px;
+        border:1px solid #ccc;
+        font-size:14px;
+    }
+
+    button{ background:#1976d2; color:white; cursor:pointer; font-weight:bold; }
+    button:hover{ background:#145bb0; }
+    #deleteBtn{ background:red; }
+    #showBtn{ background:#28a745; }
+
+    #message{ font-weight:bold; margin-top:10px; }
+
+    table{
+        width:90%;
+        border-collapse:collapse;
+        display:none;
+        margin-top:18px;
+    }
+    th,td{
+        padding:8px;
+        border:1px solid #aaa;
+    }
+    th{ background:#1976d2; color:white; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Upload Section -->
+    <input type="file" id="fileInput" accept="application/pdf">
+    <button onclick="upload()">Upload PDF</button>
+
+    <!-- ID Actions -->
+    <input type="number" id="docId" placeholder="Enter Document ID">
+    <button onclick="viewDoc()">View</button>
+    <button id="deleteBtn" onclick="deleteDoc()">Delete</button>
+
+    <!-- Show All -->
+    <button id="showBtn" onclick="loadAll()">Show All Documents</button>
+
+    <p id="message"></p>
+
+    <!-- Table -->
+    <table id="docTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Filename</th>
+                <th>View</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+    </table>
+
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
